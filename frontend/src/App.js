@@ -13,10 +13,15 @@ function App() {
 
   const production = true;
 
-  const serverAddress = () => {
+  const serverAddress = production
+    ? 'http://20.199.179.107:5558'
+    : 'http://localhost:5558';
+  /*const serverAddress = () => {
     if (production === false) return 'http://localhost:5558';
     else return 'http://20.199.179.107:5558';
-  };
+  };*/
+
+  console.log(serverAddress);
 
   useEffect(() => {
     getBooks();
